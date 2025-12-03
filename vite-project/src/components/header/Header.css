@@ -1,0 +1,43 @@
+.header {
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-top: 32px;
+    padding-bottom: 28px;
+    display: flex;
+    align-items: center;
+    font-family: "CabinetGrotesk", sans-serif;
+    font-weight: 700;
+    line-height: 24px;
+}
+
+.header__logo {
+    width: 89px;
+    height: 40px;
+}
+.header__user-container {
+    display: flex;
+   gap: 12px;
+   align-items: center;
+}
+
+.header__date-and-location {
+margin-left: 28px;
+font-size: 24px;
+}
+
+.header__add-clothes-button {
+    background-color: #f3f3f3;
+    border-style: none;
+    margin: 0 20px 0 auto;
+    font-weight: 700;
+    font-size: 20px;
+    
+}
+
+.header__user-name {
+    font-size: 20px;
+}
+.header__user-avatar {
+    height: 40px;
+    width: 40px;
+}

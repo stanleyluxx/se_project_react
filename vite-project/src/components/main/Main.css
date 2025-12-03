@@ -1,0 +1,20 @@
+.main{
+  display: flex;
+  align-items: center;
+}
+
+.main__weather-message {
+  font-family: "CabinetGrotesk", sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  margin-left: 40px;
+  margin-top: 40px;
+}
+
+.main__item-cards{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 20px;
+  max-width: 1200px;
+  padding: 40px;
+}
