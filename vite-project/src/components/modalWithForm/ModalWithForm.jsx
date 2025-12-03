@@ -26,7 +26,7 @@ function ModalWithForm({
   }, [activeModal]);
 
   return (
-    <div className={`modal ${activeModal == "add-garment" && "modal__opened"}`}>
+    <div className={`modal ${activeModal == "add-garment" && "modal_opened"}`}>
       <form className="modal__form">
         <button
           className="modal__close"
