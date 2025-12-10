@@ -3,10 +3,13 @@ import userAvatar from '../../assets/avatar-image.svg';
 import './Header.css';
 
 function Header({ handleAddClick }) {
+  const currentDate = new Date().toLocaleString('default', { 
+    month: 'long', day: 'numeric' });
+
   return (
     <header className="header">
       <img className="header__logo" src={headerLogo} alt="App logo" />
-      <p className="header__date-and-location">June 15, New York</p>
+      <p className="header__date-and-location">{currentDate}, New York</p>
       <button  type= "button" onClick={handleAddClick} className="header__add-clothes-button">+ Add Clothes</button>
       <div className="header__user-container">
         <p className="header__user-name">Terrance Tegegne</p>

@@ -6,6 +6,7 @@ import defaultClothingItems from "../../utils/clothingItems";
 import ModalWithForm from "../modalWithForm/modalWithForm";
 import "./App.css";
 import ItemModal from "../itemModal/ItemModal";
+import { getWeather } from "../../utils/weatherApi.js";
 
 function App() {
   const [count, setCount] = useState(0);

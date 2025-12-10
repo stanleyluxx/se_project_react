@@ -25,8 +25,15 @@ function ModalWithForm({
     };
   }, [activeModal]);
 
+  const handleOverlayClick = (e) => {
+    if (e.target.classList.contains("modal")) {
+      closeActiveModal();
+    }
+  };
+
   return (
-    <div className={`modal ${activeModal == "add-garment" && "modal_opened"}`}>
+    <div className={`modal ${activeModal == "add-garment" && "modal_opened"}`}
+      onClick={handleOverlayClick}>
       <form className="modal__form">
         <button
           className="modal__close"

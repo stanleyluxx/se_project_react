@@ -64,10 +64,10 @@
 /* Close button */
 .modal__close {
   position: absolute;
-  top: 12px;
-  right: 12px;
-  width: 24px;
-  height: 24px;
+  top: 24px;
+  right: 24px;
+  width: 16px;
+  height: 16px;
   background: transparent url("../../assets/close-icon.svg") center/contain
     no-repeat;
   background-size: contain;
