@@ -2,6 +2,7 @@
     overflow: hidden;
     display: flex;
     justify-content: center;
+    cursor: pointer;
 }
 
 .item-card__image {

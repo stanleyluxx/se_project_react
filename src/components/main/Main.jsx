@@ -3,8 +3,12 @@ import ItemCard from "../itemCard/ItemCard";
 import "./Main.css";
 
 function Main({ clothingItems, onCardClick }) {
+  const filteredItems = clothingItems.filter(
+    (item) => item.weather === weather
+  );
+  
   return (
-    <main className="Main">
+    <main className="main">
       <WeatherCard />
       <p className="main__weather-message">
         Today is 75° F / You may want to wear:

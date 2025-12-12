@@ -9,7 +9,7 @@ function ItemModal({ activeModal, onClose, card,}) {
 
   return (
     <div
-      className={`modal ${activeModal === "preview" && "modal_opened"}`}
+      className={`modal ${activeModal === "preview" ? "modal_opened" : ""}`}
       onClick={handleOverlayClick}
     >
       <div className="modal__content modal__content_type_image">
