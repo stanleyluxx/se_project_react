@@ -19,6 +19,8 @@ function App() {
     getWeather().then((data) => setWeather(data));
   }, []);
 
+  const weatherType = weather.condition;
+
   const handleCardClick = (card) => {
     setActiveModal("preview");
     setSelectedCard(card);
@@ -39,7 +41,7 @@ function App() {
 
         <Main
           clothingItems={clothingItems}
-          weather={weather.condition}
+          weather={weatherType}
           onCardClick={handleCardClick}
         />
 
