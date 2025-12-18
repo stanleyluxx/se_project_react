@@ -2,16 +2,22 @@ import WeatherCard from "../weatherCard/WeatherCard";
 import ItemCard from "../itemCard/ItemCard";
 import "./Main.css";
 
-function Main({ clothingItems, onCardClick, weather }) {
+function Main({ clothingItems, onCardClick, weatherType, temperature, }) {
   const filteredItems = clothingItems.filter(
-    (item) => item.weather === weather
+    (item) => item.weather === weatherType
   );
+
+  const weatherMessages = {
+    hot: "It’s hot — stay cool!",
+    warm: "Nice weather — dress light.",
+    cold: "It’s cold — bundle up!",
+  };
   
   return (
     <main className="main">
-      <WeatherCard />
+      <WeatherCard temperature={temperature} />
       <p className="main__weather-message">
-        Today is 75° F / You may want to wear:
+        Today is {Math.round(temperature)}°F / {weatherMessages[weatherType]}
       </p>
       <section className="main__item-cards">
         {filteredItems.map((item) => (

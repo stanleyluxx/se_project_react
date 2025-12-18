@@ -7,6 +7,7 @@ import ModalWithForm from "../modalWithForm/ModalWithForm.jsx";
 import "./App.css";
 import ItemModal from "../itemModal/ItemModal.jsx";
 import { getWeather } from "../../utils/weatherApi.js";
+import { getWeatherCondition } from "../../utils/weatherApi.js";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -19,7 +20,7 @@ function App() {
     getWeather().then((data) => setWeather(data));
   }, []);
 
-  const weatherType = weather.condition;
+  const weatherType = getWeatherCondition(weather.temp);
 
   const handleCardClick = (card) => {
     setActiveModal("preview");
@@ -41,7 +42,8 @@ function App() {
 
         <Main
           clothingItems={clothingItems}
-          weather={weatherType}
+          weatherType={weatherType}
+          temperature={weather.temp}
           onCardClick={handleCardClick}
         />
 

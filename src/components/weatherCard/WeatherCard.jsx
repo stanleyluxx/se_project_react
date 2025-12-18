@@ -1,7 +1,8 @@
 import sunny from "../../assets/sunny.png";
 import './WeatherCard.css';
 
-function WeatherCard() {
+function WeatherCard({temperature}) {
+
     return (
       <div className="weather-card">
         <img
@@ -9,7 +10,7 @@ function WeatherCard() {
           src={sunny}
           alt="sunny card image"
         />
-        <p className="weather-card__temp">75 &deg; F </p>
+        <p className="weather-card__temp">{Math.round(temperature)}°F</p>
       </div>
     );
 }

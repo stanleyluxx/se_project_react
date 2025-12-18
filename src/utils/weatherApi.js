@@ -14,8 +14,8 @@ export const getWeather = () => {
     .then((data) => {
       return {
         city: data.name,
-        temperature: Math.round(data.main.temp),
-        condition: getWeatherCondition(data.main.temp),
+        temp: Number(data.main.temp),
+        condition: data.weather[0].main,
       };
     });
 };
@@ -26,3 +26,5 @@ export const getWeatherCondition = (temp) => {
   if (temp >= 66 && temp < 86) return "warm";
   return "cold";
 };
+
+
