@@ -17,7 +17,13 @@ function App() {
 
   const [weather, setWeather] = useState({ city: "", temp: 0, condition: "" });
   useEffect(() => {
-    getWeather().then((data) => setWeather(data));
+    getWeather()
+      .then((data) => {
+        setWeather(data);
+      })
+      .catch((err) => {
+        console.error("Error fetching weather:", err);
+      });
   }, []);
 
   const weatherType = getWeatherCondition(weather.temp);
@@ -53,7 +59,7 @@ function App() {
         title="New Garment"
         name="add-garment"
         buttonText="Add Garment"
-        activeModal={activeModal}
+        isOpen={activeModal === "add-garment"}
         closeActiveModal={closeActiveModal}
       >
         <label className="modal__label">

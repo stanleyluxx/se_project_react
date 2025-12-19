@@ -15,7 +15,6 @@ import sweatshirtImage from "../assets/sweatshirt.png";
 import sandalsImage from "../assets/sandals.png";
 import dressImage from "../assets/dress.png";
 
-
 const defaultClothingItems = [
   {
     _id: 1,
@@ -32,77 +31,27 @@ const defaultClothingItems = [
   {
     _id: 3,
     name: "shorts",
-    weather: "hot", 
+    weather: "hot",
     imageUrl: shortsImage,
   },
-  { _id: 4, 
-    name: "sneakers", 
-    weather: "warm", 
-    imageUrl: sneakersImage 
-  },
-  { _id: 5, 
-    name: "pants", 
-    weather: "cold", 
-    imageUrl: pantsImage 
-  },
-  { _id: 6, 
-    name: "coat", 
-    weather: "cold", 
-    imageUrl: coatImage 
-  },
-  { _id: 7, 
-    name: "hoodie", 
-    weather: "cold", 
-    imageUrl: hoodieImage 
-  },
-  { _id: 8, 
-    name: "boots", 
-    weather: "cold", 
-    imageUrl: bootImage 
-  },
-  { _id: 9, 
-    name: "jacket", 
-    weather: "cold", 
-    imageUrl: jacketImage 
-  },
-  { _id: 10, 
-    name: "scarf", 
-    weather: "cold", 
-    imageUrl: scarfImage 
-  },
-  { _id: 11,
-    name: "loafers",
-    weather: "warm",
-    imageUrl: loafersImage,
-  },
+  { _id: 4, name: "sneakers", weather: "warm", imageUrl: sneakersImage },
+  { _id: 5, name: "pants", weather: "cold", imageUrl: pantsImage },
+  { _id: 6, name: "coat", weather: "cold", imageUrl: coatImage },
+  { _id: 7, name: "hoodie", weather: "cold", imageUrl: hoodieImage },
+  { _id: 8, name: "boots", weather: "cold", imageUrl: bootImage },
+  { _id: 9, name: "jacket", weather: "cold", imageUrl: jacketImage },
+  { _id: 10, name: "scarf", weather: "cold", imageUrl: scarfImage },
+  { _id: 11, name: "loafers", weather: "warm", imageUrl: loafersImage },
   {
     _id: 12,
     name: "sunglasses",
     weather: "hot",
     imageUrl: sunglassesImage,
   },
-  { _id: 13,
-    name: "skirt",
-    weather: "hot",
-    imageUrl: skirtImage,
-  },
-  { _id: 14,
-    name: "sandals",
-    weather: "hot",
-    imageUrl: sandalsImage,
-  },
-  { _id: 15,
-    name: "sweatshirt",
-    weather: "warm",
-    imageUrl: sweatshirtImage,
-  },
-  { _id: 16,
-    name: "dress",
-    weather: "hot",
-    imageUrl: dressImage,
-  },
-
-
+  { _id: 13, name: "skirt", weather: "hot", imageUrl: skirtImage },
+  { _id: 14, name: "sandals", weather: "hot", imageUrl: sandalsImage },
+  { _id: 15, name: "sweatshirt", weather: "warm", imageUrl: sweatshirtImage },
+  { _id: 16, name: "dress", weather: "hot", imageUrl: dressImage },
 ];
 
 export default defaultClothingItems;

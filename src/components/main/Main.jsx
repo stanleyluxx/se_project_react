@@ -2,7 +2,7 @@ import WeatherCard from "../weatherCard/WeatherCard";
 import ItemCard from "../itemCard/ItemCard";
 import "./Main.css";
 
-function Main({ clothingItems, onCardClick, weatherType, temperature, }) {
+function Main({ clothingItems, onCardClick, weatherType, temperature }) {
   const filteredItems = clothingItems.filter(
     (item) => item.weather === weatherType
   );
@@ -12,7 +12,7 @@ function Main({ clothingItems, onCardClick, weatherType, temperature, }) {
     warm: "Nice weather — dress light.",
     cold: "It’s cold — bundle up!",
   };
-  
+
   return (
     <main className="main">
       <WeatherCard temperature={temperature} />
@@ -26,7 +26,6 @@ function Main({ clothingItems, onCardClick, weatherType, temperature, }) {
       </section>
     </main>
   );
-  
 }
 
 export default Main;
