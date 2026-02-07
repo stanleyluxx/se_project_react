@@ -15,7 +15,7 @@ function Main({ clothingItems, onCardClick, weatherType, temperature }) {
 
   return (
     <main className="main">
-      <WeatherCard temperature={temperature} />
+      <WeatherCard weatherData={{ temperature: temperature }} />
       <p className="main__weather-message">
         Today is {Math.round(temperature)}°F / {weatherMessages[weatherType]}
       </p>

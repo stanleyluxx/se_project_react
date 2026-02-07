@@ -14,7 +14,10 @@ export const getWeather = () => {
     .then((data) => {
       return {
         city: data.name,
-        temp: Number(data.main.temp),
+        temp: {
+          F: Math.round(data.main.temp),
+          C: Math.round(((data.main.temp - 32) * 5) / 9),
+        },
         condition: data.weather[0].main,
       };
     });
