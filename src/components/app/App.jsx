@@ -72,10 +72,10 @@ function App() {
   };
 
   const handleConfirmDelete = () => {
-    deleteClothingItem(itemToDelete.id)
+    deleteClothingItem(itemToDelete._id)
       .then(() => {
         setClothingItems((prev) =>
-          prev.filter((item) => item.id !== itemToDelete.id),
+          prev.filter((item) => item.id !== itemToDelete._id),
         );
         setItemToDelete(null);
         closeActiveModal();
