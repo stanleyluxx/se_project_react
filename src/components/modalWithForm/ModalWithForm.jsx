@@ -6,14 +6,15 @@ function ModalWithForm({
   buttonText,
   children,
   isOpen,
-  closeActiveModal,
+  onClose,
+  onSubmit,
 }) {
   useEffect(() => {
     if (!isOpen) return;
 
     const handleEscClose = (e) => {
       if (e.key === "Escape") {
-        closeActiveModal();
+        onClose();
       }
     };
 
@@ -22,11 +23,11 @@ function ModalWithForm({
     return () => {
       document.removeEventListener("keydown", handleEscClose);
     };
-  }, [isOpen, closeActiveModal]);
+  }, [isOpen, onClose]);
 
   const handleOverlayClick = (e) => {
     if (e.target.classList.contains("modal")) {
-      closeActiveModal();
+      onClose();
     }
   };
 
@@ -35,12 +36,8 @@ function ModalWithForm({
       className={`modal ${isOpen ? "modal_opened" : ""}`}
       onClick={handleOverlayClick}
     >
-      <form className="modal__form">
-        <button
-          className="modal__close"
-          type="button"
-          onClick={closeActiveModal}
-        />
+      <form onSubmit={onSubmit} className="modal__form">
+        <button className="modal__close" type="button" onClick={onClose} />
 
         <h2 className="modal__title">{title}</h2>
 

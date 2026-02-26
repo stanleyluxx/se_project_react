@@ -31,7 +31,11 @@ font-size: 24px;
     margin: 0 20px 0 auto;
     font-weight: 700;
     font-size: 20px;
+    cursor: pointer;
     
+}
+.header__add-clothes-button:hover {
+    opacity: 60%;
 }
 
 .header__user-name {
@@ -45,5 +49,23 @@ font-size: 24px;
 .header__nav {
     display: flex;
     align-items: center;
-    padding-left: 285px;
+    padding-left: 450px;
+}
+
+.header__user-name-link {
+    color: #000000;
+    text-decoration: none;
+
+}
+
+.header__user-name-link:hover {
+    opacity: 60%;
+}
+
+.header__logo-link {
+    text-decoration: none;
+}
+
+.header__logo-link:hover {
+    opacity: 60%;
 }

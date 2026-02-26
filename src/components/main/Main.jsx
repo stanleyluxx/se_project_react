@@ -1,8 +1,17 @@
+import { useContext } from "react";
 import WeatherCard from "../weatherCard/WeatherCard";
 import ItemCard from "../itemCard/ItemCard";
 import "./Main.css";
+import CurrentTemperatureUnitContext from "../../contexts/CurrentTemperatureUnitContext";
 
 function Main({ clothingItems, onCardClick, weatherType, temperature }) {
+
+const { currentTemperatureUnit } = useContext(CurrentTemperatureUnitContext);
+
+  if (!temperature) {
+    return <p>Loading weather...</p>;
+  }
+
   const filteredItems = clothingItems.filter(
     (item) => item.weather === weatherType
   );
@@ -15,9 +24,10 @@ function Main({ clothingItems, onCardClick, weatherType, temperature }) {
 
   return (
     <main className="main">
-      <WeatherCard weatherData={{ temperature: temperature }} />
+      <WeatherCard temperature={temperature} />
       <p className="main__weather-message">
-        Today is {Math.round(temperature)}°F / {weatherMessages[weatherType]}
+        Today is {temperature[currentTemperatureUnit]}°{currentTemperatureUnit}{" "}
+        / {weatherMessages[weatherType]}
       </p>
       <section className="main__item-cards">
         {filteredItems.map((item) => (
