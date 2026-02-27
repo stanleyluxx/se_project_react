@@ -8,4 +8,4 @@ The idea of the application is pretty simple - we make a call to an API, which t
 
 - [Figma Design](https://www.figma.com/file/DTojSwldenF9UPKQZd6RRb/Sprint-10%3A-WTWR)
 - [WTWR Site](https://stanleyluxx.github.io/se_project_react/)
--[Pitch Video](https://www.loom.com/share/98787983e11644c38c23676f5d922a00)
+- [Pitch Video](https://www.loom.com/share/98787983e11644c38c23676f5d922a00)
