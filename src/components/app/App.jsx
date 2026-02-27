@@ -75,7 +75,7 @@ function App() {
     deleteClothingItem(itemToDelete._id)
       .then(() => {
         setClothingItems((prev) =>
-          prev.filter((item) => item.id !== itemToDelete._id),
+          prev.filter((item) => item._id !== itemToDelete._id),
         );
         setItemToDelete(null);
         closeActiveModal();
