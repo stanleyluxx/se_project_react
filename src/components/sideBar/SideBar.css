@@ -1,11 +1,49 @@
 .sideBar__user-container {
   display: flex;
   gap: 16px;
-  align-items: center;
   flex-direction: row-reverse;
 }
+
+.sideBar__user-info {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.sideBar__edit-button {
+  background: none;
+  border: 0;
+  color: #000;
+  cursor: pointer;
+  font: "Cabinet Grotesk", sans-serif;
+  font-style: bold;
+  font-size: 20px;
+  padding: 0;
+  text-align: left;
+  margin-top: 15px;
+  margin-left:-60px;
+}
+
+.sideBar__edit-button:hover {
+  opacity: 60%;
+}
+
 .sideBar__user-avatar {
   height: 56px;
+  width: 56px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.sideBar__user-avatar-placeholder {
+  align-items: center;
+  background-color: #000;
+  border-radius: 50%;
+  color: #fff;
+  display: flex;
+  font-size: 20px;
+  height: 56px;
+  justify-content: center;
   width: 56px;
 }
 
@@ -17,4 +55,17 @@
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
+}
+
+.sideBar__sign-out-button {
+  background: none;
+  border: 0;
+  color: #000;
+  cursor: pointer;
+  font: "Cabinet Grotesk", sans-serif;
+  font-style: bold;
+  font-size: 20px;
+  padding: 0;
+  text-align: left;
+  margin-left: -60px;
 }

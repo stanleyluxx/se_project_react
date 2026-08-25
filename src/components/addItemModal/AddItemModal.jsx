@@ -1,24 +1,29 @@
-import useForm from "../../hooks/useform.js";
+import useFormWithValidation from "../../hooks/useFormWithValidation.js";
 import ModalWithForm from "../modalWithForm/ModalWithForm.jsx";
 import { useEffect } from "react";
 
-const AddItemModal = ({ isOpen, onAddItem, onCloseModal, onClose }) => {
-  const defaultValues = {
-    name: "",
-    imageUrl: "",
-    weather: "",
-  };
-  const { values, handleChange, setValues } = useForm(defaultValues);
+// Keep defaults at module scope so they are referentially stable
+// across renders. This avoids needing `useMemo` inside the component.
+const defaultValues = {
+  name: "",
+  imageUrl: "",
+  weather: "",
+};
+
+const AddItemModal = ({ isOpen, onAddItem, onCloseModal }) => {
+  const { values, handleChange, resetForm, errors, showErrors, handleSubmit } =
+    useFormWithValidation(defaultValues);
 
   useEffect(() => {
     if (isOpen) {
-      setValues(defaultValues);
+      // clear everything when the modal opens
+      resetForm();
     }
-  }, [isOpen, setValues]);
+  }, [isOpen, resetForm]);
 
   function handleFormSubmit(evt) {
-    evt.preventDefault();
-    onAddItem(values);
+    // delegate validation and submission to the hook
+    handleSubmit(evt, onAddItem);
   }
 
   return (
@@ -36,23 +41,33 @@ const AddItemModal = ({ isOpen, onAddItem, onCloseModal, onClose }) => {
           name="name"
           value={values.name}
           onChange={handleChange}
-          className="modal__input"
+          className={
+            "modal__input" +
+            (showErrors && errors.name ? " modal__input_invalid" : "")
+          }
           placeholder="Name"
-          required
         />
+        {showErrors && errors.name && (
+          <span className="modal__error">{errors.name}</span>
+        )}
       </label>
 
       <label className="modal__label">
         Image URL
         <input
-          type="url"
+          type="text"
           name="imageUrl"
           value={values.imageUrl}
           onChange={handleChange}
-          className="modal__input"
+          className={
+            "modal__input" +
+            (showErrors && errors.imageUrl ? " modal__input_invalid" : "")
+          }
           placeholder="Image URL"
-          required
         />
+        {showErrors && errors.imageUrl && (
+          <span className="modal__error">{errors.imageUrl}</span>
+        )}
       </label>
 
       <fieldset className="modal__radio-buttons">
@@ -71,6 +86,9 @@ const AddItemModal = ({ isOpen, onAddItem, onCloseModal, onClose }) => {
             {type}
           </label>
         ))}
+        {showErrors && errors.weather && (
+          <span className="modal__error">{errors.weather}</span>
+        )}
       </fieldset>
     </ModalWithForm>
   );

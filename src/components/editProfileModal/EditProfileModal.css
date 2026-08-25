@@ -1,0 +1,20 @@
+.edit-profile-modal__content {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.edit-profile-modal__label {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.edit-profile-modal__input {
+  border-style: none;
+  border-bottom: 2px solid #000000;
+  opacity: 1;
+  padding-bottom: 4px;
+  font-weight: 700;
+  font-size: 16px;
+}

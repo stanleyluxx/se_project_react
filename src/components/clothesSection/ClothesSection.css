@@ -3,7 +3,9 @@
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 20px;
   max-width: 1015px;
+  padding-left: 116px;
 }
+
 
 .clothes-section__header {
   max-width: 1015px;
@@ -13,7 +15,7 @@
   font-size: 20px;
   font-weight: 700;
   line-height: 100%;
-  padding-left: 35px;
+  padding-left: 116px;
 }
 
 .clothes-section__add-button {

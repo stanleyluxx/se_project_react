@@ -31,6 +31,10 @@
   font-size: 16px;
 }
 
+.modal__input_invalid {
+  border-bottom-color: #e74c3c;
+}
+
 .modal__input::placeholder {
   color: rgba(0, 0, 0, 0.3);
 }
@@ -98,4 +102,21 @@
   font-weight: 700;
   font-size: 16px;
   line-height: 20px;
+}
+
+.modal__error {
+  color: #e74c3c;
+  font-size: 12px;
+  margin-top: 4px;
+}
+
+.modal__radio-label {
+  display: flex;
+  gap: 8px;
+  font-weight: 700;
+  font-size: 16px;
+}
+
+.modal__radio-label_invalid {
+  color: #e74c3c;
 }

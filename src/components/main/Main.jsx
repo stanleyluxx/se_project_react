@@ -4,17 +4,18 @@ import ItemCard from "../itemCard/ItemCard";
 import "./Main.css";
 import CurrentTemperatureUnitContext from "../../contexts/CurrentTemperatureUnitContext";
 
-function Main({ clothingItems, onCardClick, weatherType, temperature }) {
-
-const { currentTemperatureUnit } = useContext(CurrentTemperatureUnitContext);
+function Main({
+  clothingItems,
+  onCardClick,
+  onCardLike,
+  weatherType,
+  temperature,
+}) {
+  const { currentTemperatureUnit } = useContext(CurrentTemperatureUnitContext);
 
   if (!temperature) {
     return <p>Loading weather...</p>;
   }
-
-  const filteredItems = clothingItems.filter(
-    (item) => item.weather === weatherType
-  );
 
   const weatherMessages = {
     hot: "It’s hot — stay cool!",
@@ -30,8 +31,13 @@ const { currentTemperatureUnit } = useContext(CurrentTemperatureUnitContext);
         / {weatherMessages[weatherType]}
       </p>
       <section className="main__item-cards">
-        {filteredItems.map((item) => (
-          <ItemCard key={item._id} item={item} onCardClick={onCardClick} />
+        {clothingItems.map((item) => (
+          <ItemCard
+            key={item._id}
+            item={item}
+            onCardClick={onCardClick}
+            onCardLike={onCardLike}
+          />
         ))}
       </section>
     </main>

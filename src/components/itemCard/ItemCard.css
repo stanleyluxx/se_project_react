@@ -1,8 +1,11 @@
 .item-card {
-    overflow: hidden;
-    display: flex;
-    justify-content: center;
-    cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
+  width: 100%;
+  max-width: 300px;
 }
 
 .item-card__image {
@@ -10,6 +13,7 @@
   height: 278px;
   object-fit: cover;
   border-radius: 8px;
+  display: block;
 }
 
 .item-card__title {
@@ -24,4 +28,54 @@
   padding-top: 2px;
   padding-bottom: 2px;
   position: absolute;
+}
+
+.item-card__like-button {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 24px;
+  height: 24px;
+  border: none;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+  padding: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition:
+    transform 0.2s ease,
+    opacity 0.2s ease;
+}
+
+.item-card__like-button svg {
+  width: 20px;
+  height: 18px;
+}
+
+.item-card__like-button path {
+  fill: transparent;
+  stroke: rgba(0, 0, 0, 0.6);
+  stroke-width: 2;
+  stroke-linejoin: round;
+  stroke-linecap: round;
+  transition:
+    fill 0.2s ease,
+    stroke 0.2s ease;
+}
+
+.item-card__like-button:hover {
+  transform: scale(1.08);
+  opacity: 1;
+}
+
+.item-card__like-button--active {
+  background: transparent;
+}
+
+.item-card__like-button--active path {
+  fill: #000000;
+  stroke: #000000;
 }
