@@ -15,13 +15,13 @@
   border: 0;
   color: #000;
   cursor: pointer;
-  font: "Cabinet Grotesk", sans-serif;
-  font-style: bold;
+  font-family: "Cabinet Grotesk", sans-serif;
+  font-weight: 700;
   font-size: 20px;
   padding: 0;
   text-align: left;
   margin-top: 15px;
-  margin-left:-60px;
+  margin-left: -60px;
 }
 
 .sideBar__edit-button:hover {
@@ -62,8 +62,8 @@
   border: 0;
   color: #000;
   cursor: pointer;
-  font: "Cabinet Grotesk", sans-serif;
-  font-style: bold;
+  font-family: "Cabinet Grotesk", sans-serif;
+  font-weight: 700;
   font-size: 20px;
   padding: 0;
   text-align: left;

@@ -61,7 +61,7 @@ function EditProfileModal({
           onChange={handleChange}
           className={
             "edit-profile-modal__input" +
-            (showErrors && errors.name ? "modal__input_invalid" : "")
+            (showErrors && errors.name ? " modal__input_invalid" : "")
           }
           placeholder="Name"
         />

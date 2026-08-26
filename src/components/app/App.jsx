@@ -217,6 +217,7 @@ function App() {
 
   const handleCardLike = ({ id, isLiked }) => {
     const token = localStorage.getItem("jwt");
+    if (!token) return;
 
     if (isLiked) {
       addCardLike(id, token)

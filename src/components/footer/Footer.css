@@ -1,26 +1,24 @@
 .footer {
-    margin-left: 40px;
-    margin-right: 40px;
-    margin-top:50px;
+  margin-left: 40px;
+  margin-right: 40px;
+  margin-top: 50px;
 }
 .footer__container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0;
 }
 .footer__name {
-    font-family: "CabinetGrotesk", sans-serif;
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 20px;
-    
+  font-family: "Cabinet Grotesk", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
 }
 
 .footer__year {
-    font-family: "CabinetGrotesk", sans-serif;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 20px;
-
+  font-family: "Cabinet Grotesk", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
 }
