@@ -91,17 +91,61 @@
   font-size: 16px;
 }
 
+.modal__buttons-container {
+  padding-top: 32px;
+  display: flex;
+  gap: 12px;
+}
+
 .modal__add-clothes-button {
   max-width: 124px;
   padding-top: 8px;
   padding-bottom: 8px;
   border-radius: 4px;
   background-color: #000000;
-  opacity: 30%;
   color: #ffffff;
   font-weight: 700;
   font-size: 16px;
   line-height: 20px;
+  cursor: pointer;
+  border: none;
+  transition: opacity 0.2s ease;
+}
+
+.modal__add-clothes-button_empty {
+  opacity: 0.3;
+}
+
+.modal__add-clothes-button_filled {
+  opacity: 1;
+}
+
+.modal__add-clothes-button:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+.modal__add-clothes-button:hover:not(:disabled) {
+  opacity: 0.85;
+}
+
+.modal__secondary-button {
+  max-width: 124px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  border: none;
+  background-color: transparent;
+  color: #000000;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 20px;
+  cursor: pointer;
+  opacity: 30%;
+}
+
+.modal__secondary-button:hover {
+  color: #000000;
+  opacity: 100%;
 }
 
 .modal__error {

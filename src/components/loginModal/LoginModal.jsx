@@ -7,7 +7,7 @@ const defaultValues = {
   password: "",
 };
 
-const LoginModal = ({ isOpen, onLogin, onCloseModal }) => {
+const LoginModal = ({ isOpen, onLogin, onCloseModal, onSwitchToRegister }) => {
   const validateLoginForm = (values) => {
     const errors = {};
 
@@ -35,6 +35,10 @@ const LoginModal = ({ isOpen, onLogin, onCloseModal }) => {
     handleSubmit(evt, onLogin);
   }
 
+  const isSubmitButtonFilled = Object.values(values).some(
+    (value) => String(value).trim() !== "",
+  );
+
   return (
     <ModalWithForm
       isOpen={isOpen}
@@ -42,6 +46,10 @@ const LoginModal = ({ isOpen, onLogin, onCloseModal }) => {
       title="Log In"
       buttonText="Log In"
       onSubmit={handleFormSubmit}
+      secondaryButtonText="Or Sign Up"
+      onSecondaryButtonClick={onSwitchToRegister}
+      isDisabled={Object.keys(errors).length > 0}
+      isSubmitButtonFilled={isSubmitButtonFilled}
     >
       <label className="modal__label">
         Email

@@ -10,7 +10,12 @@ const defaultValues = {
   avatar: "",
 };
 
-const RegisterModal = ({ isOpen, onRegister, onCloseModal }) => {
+const RegisterModal = ({
+  isOpen,
+  onRegister,
+  onCloseModal,
+  onSwitchToLogin,
+}) => {
   const validateRegistrationForm = (values) => {
     const errors = {};
 
@@ -54,6 +59,10 @@ const RegisterModal = ({ isOpen, onRegister, onCloseModal }) => {
     handleSubmit(evt, onRegister);
   }
 
+  const isSubmitButtonFilled = Object.values(values).some(
+    (value) => String(value).trim() !== "",
+  );
+
   return (
     <ModalWithForm
       isOpen={isOpen}
@@ -61,6 +70,10 @@ const RegisterModal = ({ isOpen, onRegister, onCloseModal }) => {
       title="Register"
       buttonText="Register"
       onSubmit={handleFormSubmit}
+      secondaryButtonText="Or Log In"
+      onSecondaryButtonClick={onSwitchToLogin}
+      isDisabled={Object.keys(errors).length > 0}
+      isSubmitButtonFilled={isSubmitButtonFilled}
     >
       <label className="modal__label">
         Email

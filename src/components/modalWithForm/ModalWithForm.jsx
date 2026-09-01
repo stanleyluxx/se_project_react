@@ -8,6 +8,10 @@ function ModalWithForm({
   isOpen,
   onClose,
   onSubmit,
+  secondaryButtonText,
+  onSecondaryButtonClick,
+  isDisabled,
+  isSubmitButtonFilled = false,
 }) {
   useEffect(() => {
     if (!isOpen) return;
@@ -44,9 +48,30 @@ function ModalWithForm({
         {/* If children exist, render them */}
         {children}
 
-        <button className="modal__add-clothes-button" type="submit">
-          {buttonText}
-        </button>
+        <div className="modal__buttons-container">
+          <button
+            className={
+              "modal__add-clothes-button " +
+              (isSubmitButtonFilled
+                ? "modal__add-clothes-button_filled"
+                : "modal__add-clothes-button_empty")
+            }
+            type="submit"
+            disabled={isDisabled}
+          >
+            {buttonText}
+          </button>
+
+          {secondaryButtonText && (
+            <button
+              className="modal__secondary-button"
+              type="button"
+              onClick={onSecondaryButtonClick}
+            >
+              {secondaryButtonText}
+            </button>
+          )}
+        </div>
       </form>
     </div>
   );
