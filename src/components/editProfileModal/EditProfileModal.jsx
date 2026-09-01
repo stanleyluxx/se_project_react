@@ -1,4 +1,5 @@
-import { useEffect } from "react";
+import { useContext, useEffect } from "react";
+import CurrentUserContext from "../../contexts/CurrentUserContext.js";
 import useFormWithValidation from "../../hooks/useFormWithValidation.js";
 import ModalWithForm from "../modalWithForm/ModalWithForm.jsx";
 import "./EditProfileModal.css";
@@ -8,12 +9,8 @@ const defaultValues = {
   avatar: "",
 };
 
-function EditProfileModal({
-  isOpen,
-  onCloseModal,
-  onUpdateProfile,
-  currentUser,
-}) {
+function EditProfileModal({ isOpen, onCloseModal, onUpdateProfile }) {
+  const currentUser = useContext(CurrentUserContext);
   const validateProfileForm = (values) => {
     const errors = {};
 

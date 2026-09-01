@@ -303,7 +303,6 @@ function App() {
             isOpen={activeModal === "edit-profile"}
             onCloseModal={closeActiveModal}
             onUpdateProfile={handleUpdateProfile}
-            currentUser={currentUser}
           />
           <ItemModal
             activeModal={activeModal}
